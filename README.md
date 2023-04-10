@@ -14,3 +14,9 @@ This project's goal is to create a (simplified) clone of the
 ---
 
 **The rest of the documentation is left for the users of this template to complete**
+Readme: 
+En esta primera entrega se haran las primeras implementaciones para lograr el modelamiento del juego , esto incluirá los 
+tests de las clases que se implementas. 
+Como 
+
+
