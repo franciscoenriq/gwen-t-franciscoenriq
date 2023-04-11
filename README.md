@@ -15,8 +15,9 @@ This project's goal is to create a (simplified) clone of the
 
 **The rest of the documentation is left for the users of this template to complete**
 Readme: 
-En esta primera entrega se haran las primeras implementaciones para lograr el modelamiento del juego , esto incluirá los 
-tests de las clases que se implementas. 
-Como 
+En esta primera entrega se haran las primeras implementaciones para lograr el modelamiento parcial del juego , esto incluirá los 
+tests de las clases que se implementan. 
+En este caso fallé con la implemntación de la importacion de los tests de munit por lo cual se me hizo un poco dificil de trabjar 
+pero dejé expresado algunas ideas de como implementar ciertas clases dentro del juego. 
 
 

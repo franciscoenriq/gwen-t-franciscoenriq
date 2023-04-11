@@ -10,17 +10,15 @@ import cl.uchile.dcc.gwent.battlefield.Board
  * @param deckOfCards:represent the total of cards that you have
  * @param handOfCards: the cards that you are available to play
  * por mientras estos dos ultimos parametros seran ambos del tipo carta
- *
+ *y todos los parametros quedaran publicos
  */
 
-class Player(private val name: String,private val sectionBoard: Board,private val gemCount: Int,
-             private val deckOfCards:Card,private val handOfCards:Card){
+class Player( val name: String, val sectionBoard: Board, val gemCount: Int,
+              val deckOfCards:Card, val handOfCards:Card){
 
   /**
    * we implements all of getters we need
     */
-
-
 
   /**
    * we use this when you play a card

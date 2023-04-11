@@ -8,4 +8,5 @@ lazy val root = (project in file("."))
     idePackagePrefix := Some("cl.uchile.dcc")
   )
 
+
 libraryDependencies += "org.scalameta" %% "munit" % "0.7.29" % Test
