@@ -1,6 +1,6 @@
 package cl.uchile.dcc
 package gwent.cards
 
-class Card {
+class ClimateCard extends AbstractCard(name){
 
 }
