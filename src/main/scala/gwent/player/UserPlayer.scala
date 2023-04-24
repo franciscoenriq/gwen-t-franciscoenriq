@@ -13,8 +13,8 @@ import cl.uchile.dcc.gwent.battlefield.Board
  *y todos los parametros quedaran publicos
  */
 
-class Player( val name: String, val sectionBoard: Board, val gemCount: Int,
-              val deckOfCards:Card, val handOfCards:Card){
+class UserPlayer(val name: String, val sectionBoard: Board, val gemCount: Int,
+                 val deckOfCards:Card, val handOfCards:Card){
 
   /**
    * we implements all of getters we need
