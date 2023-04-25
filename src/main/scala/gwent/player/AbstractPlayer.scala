@@ -51,7 +51,6 @@ abstract class AbstractPlayer(private val name: String,private var gemCount: Int
   def playCard(i:Int):AbstractCard={
     handOfCards.remove(i)
   }
-
 }
 
 
