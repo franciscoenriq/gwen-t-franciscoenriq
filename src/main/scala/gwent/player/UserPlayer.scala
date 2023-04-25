@@ -15,11 +15,8 @@ class UserPlayer(val name: String, val gemCount: Int,val deckOfCards:ArrayBuffer
     } else false
   }
 
-  override def hashCode(): Int = {
-    val state = Seq(name, gemCount, deckOfCards, handOfCards)
-    state.map(_.hashCode()).foldLeft(0)((a, b) => 31 * a + b)
-  }
-  override def toString = s"UserPlayer()"
+
+  override def toString = s"UserPlayer(name=$name,age=$gemCount,deckOfCards=$deckOfCards,handOfCards=$handOfCards)"
 }
 
 

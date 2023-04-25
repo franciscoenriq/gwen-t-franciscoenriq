@@ -5,7 +5,7 @@ class ClimateCard(private val name: String) extends AbstractCard(name){
 
 
 
-  override def toString = s"ClimateCard()"
+  override def toString = s"ClimateCard(name=$name)"
   override def equals(obj: Any): Boolean = {
     if (this.getClass().getName == obj.getClass.getName) {
       val otherCpuPlayer = obj.asInstanceOf[ClimateCard]

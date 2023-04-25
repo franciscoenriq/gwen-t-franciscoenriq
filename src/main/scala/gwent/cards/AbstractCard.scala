@@ -1,6 +1,13 @@
 package cl.uchile.dcc
 package gwent.cards
 import scala.collection.mutable.ArrayBuffer
+
+/**
+ *
+ * @param name
+ */
+
+
 abstract class AbstractCard(private val name:String) {
   def getName(): String = {
     this.name
