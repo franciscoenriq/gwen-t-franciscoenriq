@@ -3,18 +3,17 @@ package gwent.cards
 
 import gwent.player.AbstractPlayer
 
-class DistanceCard(private val name:String,private val force:Int) extends AbstractUnitCard(name,force){
+class CuerpoACuerpoCard(private val name: String, private val force:Int) extends AbstractUnitCard(name,force) {
 
-  override def toString = s"DistanceCard(name=$name,force=$force)"
+  override def toString = s"HandToHandCard(name=$name,force=$force)"
   override def equals(obj: Any): Boolean = {
     if (this.getClass().getName == obj.getClass.getName) {
-      val otherCpuPlayer = obj.asInstanceOf[DistanceCard]
+      val otherCpuPlayer = obj.asInstanceOf[CuerpoACuerpoCard]
       this.name == otherCpuPlayer.name
     } else false
   }
 
   override def play(jugador: AbstractPlayer): Unit = {
-    jugador.jugarCartaEnDistancia(this)
+    jugador.jugarCartaEnCuerpoCuerpo(this)
   }
-
 }

@@ -1,6 +1,8 @@
 package cl.uchile.dcc
 package gwent.cards
 
+import gwent.player.AbstractPlayer
+
 class ClimateCard(private val name: String) extends AbstractCard(name){
 
 
@@ -13,5 +15,8 @@ class ClimateCard(private val name: String) extends AbstractCard(name){
     } else false
   }
 
+  override def play(jugador: AbstractPlayer): Unit = {
+    jugador.jugarCartaEnClima(this)
+  }
 
 }

@@ -29,5 +29,16 @@ Para los jugadores se implementa una interfaz la cual la usan AbstractPlayer , d
 esto es debido a que la forma en se va desarrollando la implementacion de turnos cambia para ambos , sobre todo para 
 cpuPlayer.
 En cuanto a los tests no alcancé a hacerlos todos pero creo que tengo un buen coverage de estos :(( 
-
+-------------------------------------------------------------------------------
+ENTREGAPARCIAL 3 : 
+Agregué el double dispatch para poder dejar una carta en el campo de batalla , a travez de la funcion 
+play alojada en abstractPlayer, de esta manera usando esta unica fucion es posible que el usuraio 
+coloque correctamente la carta donde corresponda, ya que se usa la carta jugada para 
+ir a un metodo dentro de la clase de la carta que finalemnte nos redijirá a la funcion auxiliar requerida 
+dentro de AbstractPlayer para poder colocar la carta correctamente donde corresponda. 
+Eso si me quedó la duda de como implementar el tablero en si , ya que no se si es necesario crear 
+un arreglo de clases de tableros o que simplemente estas clases queden en el aire por 
+decirlo de alguna manera. Para esta entrega quedaron al aire las clases aunque quedo 
+una variable (tablero) que hacia referencia a la primera idea nombrada la cual al final no se termina usando. 
+Los tests no alcancé a a hacerlos :( 
 

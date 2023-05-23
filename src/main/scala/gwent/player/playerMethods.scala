@@ -5,5 +5,5 @@ import gwent.cards.AbstractCard
 
 trait playerMethods {
   def takeCard():Unit
-  def playCard(i:Int):AbstractCard
+  def playCard(i:Int):Unit
 }

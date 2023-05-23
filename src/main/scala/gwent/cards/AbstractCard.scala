@@ -8,7 +8,7 @@ import scala.collection.mutable.ArrayBuffer
  */
 
 
-abstract class AbstractCard(private val name:String) {
+abstract class AbstractCard(private val name:String) extends Cards  {
   def getName(): String = {
     this.name
   }
