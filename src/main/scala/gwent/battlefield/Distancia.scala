@@ -1,0 +1,12 @@
+package cl.uchile.dcc
+package gwent.battlefield
+
+import cl.uchile.dcc.gwent.cards.DistanceCard
+
+import scala.collection.mutable.ArrayBuffer
+
+class Distancia(distanceCard:ArrayBuffer[DistanceCard]) extends AbstractTable {
+  def setDistancia(a: DistanceCard): Unit = {
+    distanceCard.append(a)
+  }
+}

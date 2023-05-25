@@ -1,7 +1,14 @@
 package cl.uchile.dcc
 package gwent
+import cl.uchile.dcc.gwent.player.UserPlayer
+
 
 @main
 def main(): Unit = {
-  println("Hello world!")
+  val carta:Card = new Card()
+  val mazo: Card = new Card()
+  val tablero:Board = new Board()
+  val player1:UserPlayer= new UserPlayer("chubaca",tablero,2,carta,mazo)
+
+
 }

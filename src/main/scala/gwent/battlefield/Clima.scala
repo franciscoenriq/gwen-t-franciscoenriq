@@ -1,0 +1,12 @@
+package cl.uchile.dcc
+package gwent.battlefield
+
+import cl.uchile.dcc.gwent.cards.ClimateCard
+
+import scala.collection.mutable.ArrayBuffer
+
+class Clima(climaCards:ArrayBuffer[ClimateCard]) extends AbstractTable {
+  def setClima(a: ClimateCard): Unit = {
+    climaCards.append(a)
+  }
+}
