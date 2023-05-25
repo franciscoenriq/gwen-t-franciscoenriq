@@ -41,4 +41,10 @@ un arreglo de clases de tableros o que simplemente estas clases queden en el air
 decirlo de alguna manera. Para esta entrega quedaron al aire las clases aunque quedo 
 una variable (tablero) que hacia referencia a la primera idea nombrada la cual al final no se termina usando. 
 Los tests no alcancé a a hacerlos :( 
-
+----------------------------------------
+Alcancé a arreglar mejor mi entrega , al final lo que hice fue crear la clase tablero, la cual al inicializarse 
+contiene variables de todos los campos del tablero . La idea entonces es que a cada jugador se le entregue el mismo 
+tablero , de esta manera ambos estarán enterados de cualquier carta de que se coloque en el tablero. 
+Así tambien resolvemos el hecho de tener solo una zona de clima. 
+Lo demas termina funcionande excatamente igual a lo explicado anteriormente. 
+NUevamente no alcancé a hacer los tests : (( 

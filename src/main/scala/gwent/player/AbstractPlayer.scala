@@ -1,6 +1,6 @@
 package cl.uchile.dcc
 package gwent.player
-import cl.uchile.dcc.gwent.battlefield.{AbstractTable, Asedio, Clima, CuerpoCuerpo, Distancia}
+import cl.uchile.dcc.gwent.battlefield.{AbstractTable, Asedio, Clima, CuerpoCuerpo, Distancia, Tablero}
 
 import scala.collection.mutable.ArrayBuffer
 import cl.uchile.dcc.gwent.cards.{AbstractCard, AsedioCard, ClimateCard, CuerpoACuerpoCard, DistanceCard}
@@ -14,48 +14,15 @@ import scala.util.Random
  * @param handOfCards: the cards that you are available to play
  */
 abstract class AbstractPlayer(private val name: String,private var gemCount: Int = 2,
-                              private var deckOfCards:ArrayBuffer[AbstractCard],private var handOfCards:ArrayBuffer[AbstractCard] ) extends playerMethods {
+                              private var deckOfCards:ArrayBuffer[AbstractCard],private var handOfCards:ArrayBuffer[AbstractCard],private var tablero: Tablero) extends playerMethods {
   /**
    *
    * first we define ours getters and setters metodhs
    */
 
-  /**
-   *
-   * @param tablero
-   * cada jugador contará con una variable que se inicializará por si sola,
-   * la cual representará el tablero en el cual podrá colocar sus cartas.
-   * Este será representado como un arreglo de objetos que representaran e
-   *
-   */
-
-
-  val tablero: ArrayBuffer[Any]
-  val asedio = new Asedio(new ArrayBuffer[AsedioCard])
-  val cuerpoCuerpo = new CuerpoCuerpo(new ArrayBuffer[CuerpoACuerpoCard])
-  val distancia = new Distancia(new ArrayBuffer[DistanceCard])
-  val clima = new Clima(new ArrayBuffer[ClimateCard])
-  def setTablero(): Unit = {
-    tablero.append(asedio)
-    tablero.append(cuerpoCuerpo)
-    tablero.append(distancia)
-    tablero.append(clima)
-  }
-
-  def jugarCartaEnAsedio(a:AsedioCard): Unit = {
-    this.asedio.setAsedio(a)
-  }
-
-  def jugarCartaEnCuerpoCuerpo(a: CuerpoACuerpoCard): Unit = {
-    this.cuerpoCuerpo.setCuerpoCuerpo(a)
-  }
-
-  def jugarCartaEnDistancia(a: DistanceCard): Unit = {
-    this.distancia.setDistancia(a)
-  }
 
   def jugarCartaEnClima(a: ClimateCard): Unit = {
-    this.clima.setClima(a)
+    this.tablero.clima.setClima(a)
   }
 
   def setHandOfCards(carta:AbstractCard): Unit = {

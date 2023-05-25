@@ -1,11 +1,27 @@
 package cl.uchile.dcc
 package gwent.player
-import gwent.cards.AbstractCard
+import gwent.cards.{AbstractCard, AsedioCard, ClimateCard, CuerpoACuerpoCard, DistanceCard}
+
+import cl.uchile.dcc.gwent.battlefield.Tablero
+
 import scala.collection.mutable.ArrayBuffer
 
 
 class CpuPlayer(name: String, gemCount: Int = 2,
-                deckOfCards:ArrayBuffer[AbstractCard], handOfCards:ArrayBuffer[AbstractCard]) extends AbstractPlayer(name, gemCount, deckOfCards,handOfCards) {
+                deckOfCards:ArrayBuffer[AbstractCard], handOfCards:ArrayBuffer[AbstractCard],tablero:Tablero) extends AbstractPlayer(name, gemCount, deckOfCards,handOfCards,tablero ) {
+
+
+
+  def jugarCartaEnAsedio(a: AsedioCard): Unit = {
+    this.tablero.asedioCpu.setAsedio(a)
+  }
+  def jugarCartaEnCuerpoCuerpo(a: CuerpoACuerpoCard): Unit = {
+    this.tablero.cuerpoACuerpoCpu.setCuerpoCuerpo(a)
+  }
+  def jugarCartaEnDistancia(a: DistanceCard): Unit = {
+    this.tablero.distanciaCpu.setDistancia(a)
+  }
+
 
 
     override def equals(obj: Any): Boolean = {
