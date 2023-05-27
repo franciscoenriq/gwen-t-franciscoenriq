@@ -48,3 +48,6 @@ tablero , de esta manera ambos estarán enterados de cualquier carta de que se c
 Así tambien resolvemos el hecho de tener solo una zona de clima. 
 Lo demas termina funcionande excatamente igual a lo explicado anteriormente. 
 NUevamente no alcancé a hacer los tests : (( 
+------------------------------------------
+ENTREGA FINAL TAREA 2: Dejaré el metodo setGemCount como publico pero en teoría deberia ser privado 
+dada la caracteristica de la variable que setea el setter. Esto es debido a que es necesario para testear. 

@@ -16,19 +16,12 @@ import scala.util.Random
 abstract class AbstractPlayer(private val name: String,private var gemCount: Int = 2,
                               private var deckOfCards:ArrayBuffer[AbstractCard],private var handOfCards:ArrayBuffer[AbstractCard],private var tablero: Tablero) extends playerMethods {
   /**
-   *
    * first we define ours getters and setters metodhs
    */
-
-
-  def jugarCartaEnClima(a: ClimateCard): Unit = {
-    this.tablero.clima.setClima(a)
-  }
-
-  def setHandOfCards(carta:AbstractCard): Unit = {
+   def setHandOfCards(carta:AbstractCard): Unit = {
     this.handOfCards.append(carta)
   }
-  def setGemCount(i:Int): Unit = {
+   def setGemCount(i:Int): Unit = {
     this.gemCount = i
   }
   def getName():String={
@@ -40,7 +33,6 @@ abstract class AbstractPlayer(private val name: String,private var gemCount: Int
   def getDeckOfCards():ArrayBuffer[AbstractCard]={
     this.deckOfCards
   }
-
   def getHandOfCards(): ArrayBuffer[AbstractCard] = {
     this.handOfCards
   }
@@ -60,6 +52,14 @@ abstract class AbstractPlayer(private val name: String,private var gemCount: Int
   def playCard(i:Int):Unit ={
     val carta:AbstractCard = handOfCards.remove(i)
     carta.play(this)
+  }
+
+  /**
+   *
+   * @param a
+   */
+  def jugarCartaEnClima(a: ClimateCard): Unit = {
+    this.tablero.clima.setClima(a)
   }
 }
 

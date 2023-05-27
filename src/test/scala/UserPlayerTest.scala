@@ -31,5 +31,9 @@ class UserPlayerTest extends FunSuite{
     player1.takeCard()
     assertEquals(player1.getHandOfCards()(0),diaLluvioso)
   }
+  test("jugamos una carta"){
+    player1.playCard(0)
+    assertEquals(player1)
+  }
 
 }

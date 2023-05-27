@@ -1,4 +1,5 @@
 package cl.uchile.dcc
+import cl.uchile.dcc.gwent.battlefield.Tablero
 import cl.uchile.dcc.gwent.cards.{AbstractCard, DistanceCard}
 import cl.uchile.dcc.gwent.player.UserPlayer
 import munit.FunSuite
@@ -8,30 +9,36 @@ class AbstractPlayerTest extends FunSuite  {
   val mazo: ArrayBuffer[AbstractCard] = ArrayBuffer[AbstractCard]()
   val handOfCards:ArrayBuffer[AbstractCard] = ArrayBuffer[AbstractCard]()
   val player1: UserPlayer = null
+  val tablero:Tablero = new Tablero()
 
   ArrayBuffer[AbstractCard]
 
   override def beforeEach(context: BeforeEach): Unit = {
     val mazo: ArrayBuffer[AbstractCard] = ArrayBuffer[AbstractCard]()
     val handOfCards:ArrayBuffer[AbstractCard] = ArrayBuffer[AbstractCard]()
-    val player1: UserPlayer = new UserPlayer("han solo",2,mazo,handOfCards)
+    val player1: UserPlayer = new UserPlayer("han solo",2,mazo,handOfCards,tablero)
   }
 
   test("se deberian iniciar de buena manera todas los parametros del jugador") {
-    val player1: UserPlayer = new UserPlayer("han solo",2,mazo,handOfCards)
+    val player1: UserPlayer = new UserPlayer("han solo",2,mazo,handOfCards,tablero)
     assertEquals(player1.getName(), "hanSolo")
     assertEquals(player1.getGemCount(), 2)
     assertEquals(player1.getDeckOfCards(), mazo)
     assertEquals(player1.getHandOfCards(), handOfCards)
   }
   test("setters tests"){
-    val player1: UserPlayer = new UserPlayer("han solo",2,mazo,handOfCards)
+    val player1: UserPlayer = new UserPlayer("han solo",2,mazo,handOfCards,tablero)
     val a:Int = 1
     val cartaPrueba:DistanceCard = new DistanceCard("carta1",4)
     val myArrayBuffer = ArrayBuffer[AbstractCard]()
     myArrayBuffer.append(cartaPrueba)
-    assertEquals(player1.setGemCount(1),1)
-    assertEquals(player1.setHandOfCards(cartaPrueba),myArrayBuffer)
+
+    //-------------------------------------------------
+    player1.setGemCount(a)
+    assertEquals(player1.getGemCount(),1)
+    //-------------------------------------------------
+    player1.setHandOfCards(cartaPrueba)
+    assertEquals(player1.getHandOfCards()(0),myArrayBuffer(0))
   }
   test("takeCard test"){
     val player1: UserPlayer = new UserPlayer("han solo",2,mazo,handOfCards)

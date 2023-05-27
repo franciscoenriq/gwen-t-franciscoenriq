@@ -9,9 +9,6 @@ import scala.collection.mutable.ArrayBuffer
 
 class CpuPlayer(name: String, gemCount: Int = 2,
                 deckOfCards:ArrayBuffer[AbstractCard], handOfCards:ArrayBuffer[AbstractCard],tablero:Tablero) extends AbstractPlayer(name, gemCount, deckOfCards,handOfCards,tablero ) {
-
-
-
   def jugarCartaEnAsedio(a: AsedioCard): Unit = {
     this.tablero.asedioCpu.setAsedio(a)
   }
@@ -21,9 +18,6 @@ class CpuPlayer(name: String, gemCount: Int = 2,
   def jugarCartaEnDistancia(a: DistanceCard): Unit = {
     this.tablero.distanciaCpu.setDistancia(a)
   }
-
-
-
     override def equals(obj: Any): Boolean = {
       if(this.getClass().getName == obj.getClass.getName){
         val otherCpuPlayer = obj.asInstanceOf[CpuPlayer]
