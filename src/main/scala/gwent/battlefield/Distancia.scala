@@ -9,4 +9,7 @@ class Distancia(distanceCard:ArrayBuffer[DistanceCard]) extends AbstractTable {
   def setDistancia(a: DistanceCard): Unit = {
     distanceCard.append(a)
   }
+  def getCartasDistancia(i:Int):DistanceCard = {
+    distanceCard(i)
+  }
 }

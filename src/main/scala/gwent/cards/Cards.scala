@@ -1,8 +1,8 @@
 package cl.uchile.dcc
 package gwent.cards
 
-import gwent.player.AbstractPlayer
+import gwent.player.{AbstractPlayer, playerMethods}
 
 trait Cards {
-def play(jugador:AbstractPlayer):Unit={}
+def play(jugador:playerMethods):Unit={}
 }

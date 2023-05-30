@@ -1,12 +1,12 @@
 package cl.uchile.dcc
-import cl.uchile.dcc.gwent.cards.{AbstractCard, DistanceCard}
+import cl.uchile.dcc.gwent.cards.{AbstractCard, Cards, DistanceCard}
 import cl.uchile.dcc.gwent.player.UserPlayer
 import munit.FunSuite
 
 import scala.collection.mutable.ArrayBuffer
 class AbstractCardTest extends FunSuite{
-  val mazo: ArrayBuffer[AbstractCard] = ArrayBuffer[AbstractCard]()
-  val handOfCards: ArrayBuffer[AbstractCard] = ArrayBuffer[AbstractCard]()
+  val mazo: ArrayBuffer[Cards] = ArrayBuffer[Cards]()
+  val handOfCards: ArrayBuffer[Cards] = ArrayBuffer[Cards]()
   override def beforeEach(context: BeforeEach): Unit = {
     val mazo: ArrayBuffer[AbstractCard] = ArrayBuffer[AbstractCard]()
 

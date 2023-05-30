@@ -1,7 +1,7 @@
 package cl.uchile.dcc
 package gwent.cards
 
-import gwent.player.AbstractPlayer
+import gwent.player.{AbstractPlayer, playerMethods}
 
 class DistanceCard(private val name:String,private val force:Int) extends AbstractUnitCard(name,force){
 
@@ -13,7 +13,7 @@ class DistanceCard(private val name:String,private val force:Int) extends Abstra
     } else false
   }
 
-  override def play(jugador: AbstractPlayer): Unit = {
+  override def play(jugador: playerMethods): Unit = {
     jugador.jugarCartaEnDistancia(this)
   }
 

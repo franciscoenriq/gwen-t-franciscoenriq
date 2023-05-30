@@ -51,3 +51,5 @@ NUevamente no alcancé a hacer los tests : ((
 ------------------------------------------
 ENTREGA FINAL TAREA 2: Dejaré el metodo setGemCount como publico pero en teoría deberia ser privado 
 dada la caracteristica de la variable que setea el setter. Esto es debido a que es necesario para testear. 
+Las listas de AbstractPlayer cambiaran el tipo que almacenan, ya que se le agregó un trait a las cartas, las listas seran del tipo 
+arraybuffer[Cards]. 

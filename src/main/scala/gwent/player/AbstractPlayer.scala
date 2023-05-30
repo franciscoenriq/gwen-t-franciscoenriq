@@ -3,7 +3,7 @@ package gwent.player
 import cl.uchile.dcc.gwent.battlefield.{AbstractTable, Asedio, Clima, CuerpoCuerpo, Distancia, Tablero}
 
 import scala.collection.mutable.ArrayBuffer
-import cl.uchile.dcc.gwent.cards.{AbstractCard, AsedioCard, ClimateCard, CuerpoACuerpoCard, DistanceCard}
+import cl.uchile.dcc.gwent.cards.{AbstractCard, AsedioCard, Cards, ClimateCard, CuerpoACuerpoCard, DistanceCard}
 
 import scala.util.Random
 /**
@@ -13,12 +13,12 @@ import scala.util.Random
  * @param deckOfCards:represent the total of cards that you have
  * @param handOfCards: the cards that you are available to play
  */
-abstract class AbstractPlayer(private val name: String,private var gemCount: Int = 2,
-                              private var deckOfCards:ArrayBuffer[AbstractCard],private var handOfCards:ArrayBuffer[AbstractCard],private var tablero: Tablero) extends playerMethods {
+abstract class AbstractPlayer( val name: String,private var gemCount: Int = 2,
+                               var deckOfCards:ArrayBuffer[Cards], var handOfCards:ArrayBuffer[Cards], var tablero: Tablero) extends playerMethods {
   /**
    * first we define ours getters and setters metodhs
    */
-   def setHandOfCards(carta:AbstractCard): Unit = {
+   def setHandOfCards(carta:Cards): Unit = {
     this.handOfCards.append(carta)
   }
    def setGemCount(i:Int): Unit = {
@@ -30,10 +30,10 @@ abstract class AbstractPlayer(private val name: String,private var gemCount: Int
   def getGemCount():Int ={
     this.gemCount
   }
-  def getDeckOfCards():ArrayBuffer[AbstractCard]={
+  def getDeckOfCards():ArrayBuffer[Cards]={
     this.deckOfCards
   }
-  def getHandOfCards(): ArrayBuffer[AbstractCard] = {
+  def getHandOfCards(): ArrayBuffer[Cards] = {
     this.handOfCards
   }
   /**
@@ -50,7 +50,7 @@ abstract class AbstractPlayer(private val name: String,private var gemCount: Int
    * @return the card played
    */
   def playCard(i:Int):Unit ={
-    val carta:AbstractCard = handOfCards.remove(i)
+    val carta:Cards = handOfCards.remove(i)
     carta.play(this)
   }
 
