@@ -5,7 +5,7 @@ import cl.uchile.dcc.gwent.cards.DistanceCard
 
 import scala.collection.mutable.ArrayBuffer
 
-class Distancia(distanceCard:ArrayBuffer[DistanceCard]) extends AbstractTable {
+class Distancia(distanceCard:ArrayBuffer[DistanceCard])  {
   def setDistancia(a: DistanceCard): Unit = {
     distanceCard.append(a)
   }

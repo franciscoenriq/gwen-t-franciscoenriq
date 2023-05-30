@@ -42,7 +42,7 @@ decirlo de alguna manera. Para esta entrega quedaron al aire las clases aunque q
 una variable (tablero) que hacia referencia a la primera idea nombrada la cual al final no se termina usando. 
 Los tests no alcancé a a hacerlos :( 
 ----------------------------------------
-Alcancé a arreglar mejor mi entrega , al final lo que hice fue crear la clase tablero, la cual al inicializarse 
+Alcancé a a dejar mejor mi entrega , al final lo que hice fue crear la clase tablero, la cual al inicializarse 
 contiene variables de todos los campos del tablero . La idea entonces es que a cada jugador se le entregue el mismo 
 tablero , de esta manera ambos estarán enterados de cualquier carta de que se coloque en el tablero. 
 Así tambien resolvemos el hecho de tener solo una zona de clima. 
@@ -52,4 +52,10 @@ NUevamente no alcancé a hacer los tests : ((
 ENTREGA FINAL TAREA 2: Dejaré el metodo setGemCount como publico pero en teoría deberia ser privado 
 dada la caracteristica de la variable que setea el setter. Esto es debido a que es necesario para testear. 
 Las listas de AbstractPlayer cambiaran el tipo que almacenan, ya que se le agregó un trait a las cartas, las listas seran del tipo 
-arraybuffer[Cards]. 
+arraybuffer[Cards].
+Se implementa de buena manera el doubleDispatch necesario para colocar cartas en el tablero , los tests pasan . 
+A parte de esto, se agregan los setters y getters correspondientes para cada clase . 
+Para las clases del tablero se agregó un seter el cual nos indica la posicion de una cierta carta agregada a la lista de 
+las cartas de esta zona. 
+
+

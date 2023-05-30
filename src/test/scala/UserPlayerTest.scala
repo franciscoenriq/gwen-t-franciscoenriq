@@ -1,5 +1,5 @@
 package cl.uchile.dcc
-import cl.uchile.dcc.gwent.battlefield.{AbstractTable, Clima, CuerpoCuerpo, Tablero}
+import cl.uchile.dcc.gwent.battlefield.{Clima, CuerpoCuerpo, Tablero}
 import cl.uchile.dcc.gwent.cards.{AbstractCard, AsedioCard, Cards, ClimateCard, CuerpoACuerpoCard, DistanceCard}
 import cl.uchile.dcc.gwent.player.{CpuPlayer, UserPlayer}
 import munit.FunSuite
