@@ -1,7 +1,7 @@
 package cl.uchile.dcc
 package gwent.cards
 
-import gwent.player.{AbstractPlayer, playerMethods}
+import gwent.player.playerMethods
 
 class ClimateCard(private val name: String) extends AbstractCard(name){
 

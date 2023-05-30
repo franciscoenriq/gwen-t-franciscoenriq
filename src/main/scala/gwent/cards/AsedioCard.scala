@@ -1,7 +1,7 @@
 package cl.uchile.dcc
 package gwent.cards
 
-import gwent.player.{AbstractPlayer, playerMethods}
+import gwent.player.playerMethods
 
 
 class AsedioCard(private val name:String, private val force:Int) extends AbstractUnitCard(name, force) {

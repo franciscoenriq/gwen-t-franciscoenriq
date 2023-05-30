@@ -2,13 +2,14 @@ package cl.uchile.dcc
 package gwent.player
 import cl.uchile.dcc.gwent.battlefield.Tablero
 import cl.uchile.dcc.gwent.cards.{AbstractCard, AsedioCard, Cards, ClimateCard, CuerpoACuerpoCard, DistanceCard}
+import cl.uchile.dcc
 
 import scala.collection.mutable.ArrayBuffer
 
 
-class UserPlayer( override val name: String, var gemCount: Int, var deckOfCards:ArrayBuffer[Cards],
+class UserPlayer( name: String,  gemCount: Int,  deckOfCards:ArrayBuffer[Cards],
                 
-                 var handOfCards:ArrayBuffer[Cards],var tablero:Tablero) extends AbstractPlayer(name, gemCount, deckOfCards, handOfCards,tablero){
+                  handOfCards:ArrayBuffer[Cards], tablero:Tablero) extends AbstractPlayer(name, gemCount, deckOfCards, handOfCards, tablero){
 
   def jugarCartaEnAsedio(a: AsedioCard): Unit = {
     this.tablero.asedioJugador.setAsedio(a)

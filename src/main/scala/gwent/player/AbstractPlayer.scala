@@ -1,10 +1,11 @@
 package cl.uchile.dcc
 package gwent.player
-import cl.uchile.dcc.gwent.battlefield.{AbstractTable, Asedio, Clima, CuerpoCuerpo, Distancia, Tablero}
+
+import gwent.battlefield.*
+import gwent.cards.*
+import gwent.player.playerMethods
 
 import scala.collection.mutable.ArrayBuffer
-import cl.uchile.dcc.gwent.cards.{AbstractCard, AsedioCard, Cards, ClimateCard, CuerpoACuerpoCard, DistanceCard}
-
 import scala.util.Random
 /**
  *
@@ -53,7 +54,6 @@ abstract class AbstractPlayer( val name: String,private var gemCount: Int = 2,
     val carta:Cards = handOfCards.remove(i)
     carta.play(this)
   }
-
   /**
    *
    * @param a
