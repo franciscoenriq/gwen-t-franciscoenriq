@@ -5,7 +5,6 @@ import gwent.player.playerMethods
 
 
 class AsedioCard(private val name:String, private val force:Int) extends AbstractUnitCard(name, force) {
-  private val dni:String =""
   override def toString = s"SiegeZone(name=$name,force=$force)"
 
   override def equals(obj: Any): Boolean = {

@@ -20,8 +20,6 @@ trait playerMethods {
    * Ambos jugadores comparten el mismo espacio para dejar cartas de clima.
    * A diferencia del resto de metodos que son diferentes para ambos jugadores , tienen que llamar a partes
    * deferentes del tablero.
-   */
-  /**
    * @param i:representa la posicion de la carta que queremos jugar desde nuestra mano , que al fin de
    * cuentas es un arreglo.
    */

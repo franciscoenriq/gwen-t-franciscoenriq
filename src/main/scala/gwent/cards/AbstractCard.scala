@@ -15,7 +15,5 @@ abstract class AbstractCard(private val name:String) extends Cards  {
    * use this method when you want to add the card to the deck
    * @param deckOfCards
    */
-  def addCard(deckOfCards: ArrayBuffer[AbstractCard]):Unit={
-    deckOfCards.append(this)
-  }
+
 }
