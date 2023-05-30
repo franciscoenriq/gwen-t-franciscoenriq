@@ -9,4 +9,7 @@ class Clima(climaCards:ArrayBuffer[ClimateCard]) extends AbstractTable {
   def setClima(a: ClimateCard): Unit = {
     climaCards.append(a)
   }
+    def getCardFromClimaTable(n:Int):ClimateCard ={
+     climaCards(n)
+  }
 }

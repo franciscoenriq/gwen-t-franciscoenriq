@@ -9,4 +9,8 @@ class Asedio(AsedioCards:ArrayBuffer[AsedioCard]) extends AbstractTable() {
   def setAsedio(a:AsedioCard): Unit = {
     AsedioCards.append(a)
   }
+
+  def getCardFromAsedioTable(n: Int): AsedioCard = {
+    AsedioCards(n)
+  }
 }

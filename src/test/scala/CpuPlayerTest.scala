@@ -1,6 +1,6 @@
 package cl.uchile.dcc
 import cl.uchile.dcc.gwent.battlefield.Tablero
-import cl.uchile.dcc.gwent.cards.{AbstractCard, Cards, DistanceCard}
+import cl.uchile.dcc.gwent.cards.{AbstractCard, AsedioCard, Cards, CuerpoACuerpoCard, DistanceCard}
 import cl.uchile.dcc.gwent.player.{CpuPlayer, UserPlayer}
 import munit.FunSuite
 
@@ -26,5 +26,26 @@ class CpuPlayerTest extends FunSuite{
   }
   test("toString") {
     assertEquals(player1.toString(), s"CpuPlayer(name=$name,gemCount=$gemCount,deckOfCards=$deckOfCards,handOfCards=$handOfCards)")
+  }
+  test("doubleDispatch") {
+    val distanciaCarta: DistanceCard = new DistanceCard("distancia", 12)
+    val asedioCarta: AsedioCard = new AsedioCard("asedio", 12)
+    val cuerpoCarta: CuerpoACuerpoCard = new CuerpoACuerpoCard("cuerpo", 14)
+    //---------------------------------------
+    deckOfCards.append(distanciaCarta)
+    player1.takeCard()
+    assertEquals( handOfCards(0),distanciaCarta)
+    player1.playCard(0)
+    assertEquals(tablero.distanciaCpu.getCartasDistancia(0),distanciaCarta)
+    //---------------------------------------
+    deckOfCards.append(asedioCarta)
+    player1.takeCard()
+    player1.playCard(0)
+    assertEquals(tablero.asedioCpu.getCardFromAsedioTable(0), asedioCarta)
+    //---------------------------------------
+    deckOfCards.append(cuerpoCarta)
+    player1.takeCard()
+    player1.playCard(0)
+    assertEquals(tablero.cuerpoACuerpoCpu.getCardFromCuerpoCuerpoTable(0), cuerpoCarta)
   }
 }

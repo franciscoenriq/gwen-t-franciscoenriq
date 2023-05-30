@@ -4,11 +4,9 @@ package gwent.player
 import gwent.battlefield.*
 import gwent.cards.*
 import gwent.player.playerMethods
-
 import scala.collection.mutable.ArrayBuffer
 import scala.util.Random
 /**
- *
  * @param name:represent the name of the player
  * @param gemCount:the number of gem's
  * @param deckOfCards:represent the total of cards that you have
@@ -54,10 +52,6 @@ abstract class AbstractPlayer( val name: String,private var gemCount: Int = 2,
     val carta:Cards = handOfCards.remove(i)
     carta.play(this)
   }
-  /**
-   *
-   * @param a
-   */
   def jugarCartaEnClima(a: ClimateCard): Unit = {
     this.tablero.clima.setClima(a)
   }
