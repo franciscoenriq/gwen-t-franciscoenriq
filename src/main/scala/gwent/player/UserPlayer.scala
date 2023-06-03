@@ -7,9 +7,9 @@ import cl.uchile.dcc
 import scala.collection.mutable.ArrayBuffer
 
 
-class UserPlayer( name: String,  gemCount: Int,  deckOfCards:ArrayBuffer[Cards],
-                
-                  handOfCards:ArrayBuffer[Cards], tablero:Tablero) extends AbstractPlayer(name, gemCount, deckOfCards, handOfCards, tablero){
+class UserPlayer(private val name: String,private var gemCount: Int,private var deckOfCards:ArrayBuffer[Cards],
+
+                 private var handOfCards:ArrayBuffer[Cards],private var tablero:Tablero) extends AbstractPlayer(name, gemCount, deckOfCards, handOfCards, tablero){
   def jugarCartaEnAsedio(a: AsedioCard): Unit = {
     this.tablero.asedioJugador.setAsedio(a)
   }
@@ -22,10 +22,12 @@ class UserPlayer( name: String,  gemCount: Int,  deckOfCards:ArrayBuffer[Cards],
   override def equals(obj: Any): Boolean = {
     if (this.getClass().getName == obj.getClass.getName) {
       val otherCpuPlayer = obj.asInstanceOf[UserPlayer]
-      this.name == otherCpuPlayer.name
+      this.name == otherCpuPlayer.getName()
     } else false
   }
   override def toString = s"UserPlayer(name=$name,age=$gemCount,deckOfCards=$deckOfCards,handOfCards=$handOfCards)"
+
+  
 }
 
 

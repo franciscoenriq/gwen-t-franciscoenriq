@@ -6,6 +6,8 @@ import scala.collection.mutable.ArrayBuffer
 /**
  * clase tablero , en la cual se jugará el juego, contiene variables las cuales represetaran las distintas
  * partes del campo de juego.
+ * por el momento esta es la unica clase que se usa con las variables publicas
+ * de esta manera es mas facil acceder a las variables dado que se hace doubleDispacth
  */
 class Tablero(){
   val asedioJugador:Asedio = new Asedio(new ArrayBuffer[AsedioCard]())

@@ -5,7 +5,7 @@ import cl.uchile.dcc.gwent.cards.CuerpoACuerpoCard
 
 import scala.collection.mutable.ArrayBuffer
 
-class CuerpoCuerpo(cuerpoCuerpoCards:ArrayBuffer[CuerpoACuerpoCard])  {
+class CuerpoCuerpo(private var cuerpoCuerpoCards:ArrayBuffer[CuerpoACuerpoCard])  {
   def setCuerpoCuerpo(a: CuerpoACuerpoCard): Unit = {
     cuerpoCuerpoCards.append(a)
   }

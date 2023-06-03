@@ -7,8 +7,8 @@ import cl.uchile.dcc.gwent.battlefield.Tablero
 import scala.collection.mutable.ArrayBuffer
 
 
-class CpuPlayer(name: String, gemCount: Int = 2,
-                deckOfCards:ArrayBuffer[Cards], handOfCards:ArrayBuffer[Cards],tablero:Tablero) extends AbstractPlayer(name, gemCount, deckOfCards,handOfCards,tablero ) {
+class CpuPlayer(private val name: String,private var gemCount: Int = 2,
+                private var deckOfCards:ArrayBuffer[Cards],private var handOfCards:ArrayBuffer[Cards],private var tablero:Tablero) extends AbstractPlayer(name, gemCount, deckOfCards,handOfCards,tablero ) {
   def jugarCartaEnAsedio(a: AsedioCard): Unit = {
     this.tablero.asedioCpu.setAsedio(a)
   }

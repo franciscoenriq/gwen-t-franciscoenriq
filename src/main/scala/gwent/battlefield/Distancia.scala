@@ -5,7 +5,7 @@ import cl.uchile.dcc.gwent.cards.DistanceCard
 
 import scala.collection.mutable.ArrayBuffer
 
-class Distancia(distanceCard:ArrayBuffer[DistanceCard])  {
+class Distancia(private var distanceCard:ArrayBuffer[DistanceCard])  {
   def setDistancia(a: DistanceCard): Unit = {
     distanceCard.append(a)
   }

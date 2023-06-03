@@ -12,8 +12,8 @@ import scala.util.Random
  * @param deckOfCards:represent the total of cards that you have
  * @param handOfCards: the cards that you are available to play
  */
-abstract class AbstractPlayer( val name: String,private var gemCount: Int = 2,
-                               var deckOfCards:ArrayBuffer[Cards], var handOfCards:ArrayBuffer[Cards], var tablero: Tablero) extends playerMethods {
+abstract class AbstractPlayer(private val name: String,private var gemCount: Int = 2,
+                              private var deckOfCards:ArrayBuffer[Cards],private var handOfCards:ArrayBuffer[Cards],private var tablero: Tablero) extends playerMethods {
   /**
    * first we define ours getters and setters metodhs
    */
