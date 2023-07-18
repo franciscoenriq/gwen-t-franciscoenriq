@@ -1,6 +1,8 @@
 package cl.uchile.dcc
 package gwent.player
 import gwent.cards.{AbstractCard, AsedioCard, ClimateCard, CuerpoACuerpoCard, DistanceCard}
+import gwent.cards.Cards
+import scala.collection.mutable.ArrayBuffer
 /**
  * metodos que tiene que usar cualquier jugador para poder jugar este juego
  * Estan pensados dentro de la idea de realizar double dispatcth
@@ -31,4 +33,8 @@ trait playerMethods {
   def jugarCartaEnCuerpoCuerpo(a: CuerpoACuerpoCard): Unit
   def jugarCartaEnDistancia(a: DistanceCard): Unit
   def jugarCartaEnClima(a: ClimateCard): Unit
+  def getDeckOfCards(): ArrayBuffer[Cards] 
+
+  def getHandOfCards(): ArrayBuffer[Cards] 
+  
 }

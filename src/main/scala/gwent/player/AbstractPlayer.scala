@@ -29,20 +29,15 @@ abstract class AbstractPlayer(private val name: String,private var gemCount: Int
   def getGemCount():Int ={
     this.gemCount
   }
-  def getDeckOfCards():ArrayBuffer[Cards]={
-    this.deckOfCards
-  }
-  def getHandOfCards(): ArrayBuffer[Cards] = {
-    this.handOfCards
-  }
+
   /**
    * we use takeCard when you want to take a card from your deck of cards.
    * first set the hand of card with .remove(0) , we say that 0 is the top of the deck
-   * then use random to the deck
+   * 
    */
   def takeCard():Unit = {
     setHandOfCards(deckOfCards.remove(0))//.remove elimina y entrega el elemento en la posicion 0 del mazo de cartas.
-    Random.shuffle(deckOfCards)
+
   }
   /**
    * @param i is the position card in your hand that you want to play
@@ -54,6 +49,14 @@ abstract class AbstractPlayer(private val name: String,private var gemCount: Int
   }
   def jugarCartaEnClima(a: ClimateCard): Unit = {
     this.tablero.clima.setClima(a)
+  }
+
+  def getDeckOfCards(): ArrayBuffer[Cards] = {
+    this.deckOfCards
+  }
+
+  def getHandOfCards(): ArrayBuffer[Cards] = {
+    this.handOfCards
   }
 }
 

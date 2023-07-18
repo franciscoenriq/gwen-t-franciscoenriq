@@ -10,6 +10,7 @@ import scala.collection.mutable.ArrayBuffer
 class UserPlayer(private val name: String,private var gemCount: Int,private var deckOfCards:ArrayBuffer[Cards],
 
                  private var handOfCards:ArrayBuffer[Cards],private var tablero:Tablero) extends AbstractPlayer(name, gemCount, deckOfCards, handOfCards, tablero){
+
   def jugarCartaEnAsedio(a: AsedioCard): Unit = {
     this.tablero.asedioJugador.setAsedio(a)
   }
@@ -27,7 +28,7 @@ class UserPlayer(private val name: String,private var gemCount: Int,private var 
   }
   override def toString = s"UserPlayer(name=$name,age=$gemCount,deckOfCards=$deckOfCards,handOfCards=$handOfCards)"
 
-  
+
 }
 
 
