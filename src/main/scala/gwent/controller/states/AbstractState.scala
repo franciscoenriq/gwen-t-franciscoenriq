@@ -1,8 +1,10 @@
 package cl.uchile.dcc
-package gwent.controller
+package gwent.controller.states
+
 import gwent.controller.GameController
-import scala.util.Random
+
 import scala.collection.mutable.ArrayBuffer
+import scala.util.Random
 abstract class AbstractState(private var context: GameController) extends State {
    
 

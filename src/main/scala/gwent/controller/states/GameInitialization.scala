@@ -1,11 +1,11 @@
 package cl.uchile.dcc
-package gwent.controller
+package gwent.controller.states
 
-import gwent.cards.Cards
-import gwent.cards.ClimateCard
+import gwent.cards.{Cards, ClimateCard}
+import gwent.controller.GameController
+import gwent.controller.factoria.{CardFactory, CuerpoCuerpoFactory, DistanceCardFactory, climateCardFactory}
+import gwent.controller.states.AbstractState
 
-import cl.uchile.dcc.gwent.controller.factoria.{CardFactory, CuerpoCuerpoFactory, DistanceCardFactory, climateCardFactory}
-import  cl.uchile.dcc.gwent.controller.GameController
 import scala.util.Random
 class GameInitialization(private var context: GameController) extends AbstractState(context) {
     
@@ -38,8 +38,8 @@ class GameInitialization(private var context: GameController) extends AbstractSt
             context.getJugador2Cpu().getDeckOfCards().append(cardFactory.create())
         }
         
-        Random.shuffle(context.getJugador1().getDeckOfCards())
-        Random.shuffle(context.getJugador2Cpu().getDeckOfCards())
+        //TODO HACER QUE LOS ARREGLOS DE CARTAS DEL MAZO PUEDAN REVUELTAS UNAS VEZ QUE SE SETTEAN  
+        
 
     }
 }
