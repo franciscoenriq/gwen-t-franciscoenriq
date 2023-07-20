@@ -36,5 +36,5 @@ trait playerMethods {
   def getDeckOfCards(): ArrayBuffer[Cards] 
 
   def getHandOfCards(): ArrayBuffer[Cards] 
-  
+  def setDeckOfCards(deck:ArrayBuffer[Cards]):Unit
 }

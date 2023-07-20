@@ -3,30 +3,31 @@ package gwent.controller.states
 
 import gwent.controller.GameController
 
-class PlayerTurn(private var context: GameController) extends AbstractState(context) {
+class PlayerCpuTurn(private var context: GameController) extends AbstractState(context) {
   override def takeCardInit(): Unit = {
-      context.getJugador1().takeCard()
+      context.getJugador2Cpu().takeCard()
   }
+
   override def playCard(i: Int): Unit = {
-    context.getJugador1().playCard(i)
+    context.getJugador2Cpu().playCard(i)
   }
   override def finalizarTurno(): Unit = {
-    context.setState(new PlayerCpuTurn(context))
+    context.setState(new PlayerTurn(context))
   }
   override def passTurn(): Unit = {
-    context.setState(new PlayerCpuTurn(context))
+    context.setState(new PlayerTurn(context))
   }
 
-  override def endGame(): Unit = {
+  override def endGame(): Unit ={
     context.setState(new EndGame(context))
   }
+  //_-----------------------
+  override def toString = s"PlayerCpuTurn($context)"
 
-  override def toString = s"PlayerTurn($context)"
-
-  private def canEqual(other: Any): Boolean = other.isInstanceOf[PlayerTurn]
+  private def canEqual(other: Any): Boolean = other.isInstanceOf[PlayerCpuTurn]
   
   override def equals(other: Any): Boolean = other match
-    case that: PlayerTurn =>
+    case that: PlayerCpuTurn =>
       that.canEqual(this) &&
         context == that.context
     case _ => false

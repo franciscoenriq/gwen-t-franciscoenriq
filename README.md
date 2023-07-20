@@ -57,5 +57,18 @@ Se implementa de buena manera el doubleDispatch necesario para colocar cartas en
 A parte de esto, se agregan los setters y getters correspondientes para cada clase . 
 Para las clases del tablero se agregó un seter el cual nos indica la posicion de una cierta carta agregada a la lista de 
 las cartas de esta zona. 
-
+-------------------------------------------------
+Entrega Final TAREA3:
+En esta tarea no alcancé a hacer muchas cosas pero acá va la explicacion de lo que hice para que se pueda entender mejor para 
+el aux que está revisando :) . 
+Implementé la entrega parcial 4 basicamente.
+Usé el patron State.La clase gameController es el contexto, y los estados estan definidos a traves de un trait State y a su vez 
+todos los estados heredan de AbstractState el cual por defecto define todos los metodos como "invalidos". 
+Luego de esto existen 6 estados , gameInit el cual usa el patron de diseño factory para crear las cartas del mazo. 
+una vez que se ejecuta el metodo correspondiente desde gamecontroller viene los estados playerInit y playerCpuInit 
+los cuales son estados iniciales de juegos , ya que al takeCard automaticamente hace que tomes 10 cartas del mazo automaticamente. 
+En todos los estados se asume que estos se usarpan conrrectamente por el usuario ya que no me precupé del hecho de atrapar incorrectos 
+usos de los metodos por parte de la persona que use gameController. 
+Los estados playerTurn y playerCpuTurn son parecidos a los anteriores , solo que ahora takecard solamente toma una carta. 
+Desde estos estados es posible pasar a EndGame , el cual deja todos los metodos invalidos y se toma como el fin 
 

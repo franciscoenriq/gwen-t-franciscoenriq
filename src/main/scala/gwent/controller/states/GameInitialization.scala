@@ -3,7 +3,7 @@ package gwent.controller.states
 
 import gwent.cards.{Cards, ClimateCard}
 import gwent.controller.GameController
-import gwent.controller.factoria.{CardFactory, CuerpoCuerpoFactory, DistanceCardFactory, climateCardFactory}
+import gwent.controller.factoria.{AsedioFactory, CardFactory, CuerpoCuerpoFactory, DistanceCardFactory, climateCardFactory}
 import gwent.controller.states.AbstractState
 
 import scala.util.Random
@@ -32,14 +32,18 @@ class GameInitialization(private var context: GameController) extends AbstractSt
             context.getJugador1().getDeckOfCards().append(cardFactory.create())
             context.getJugador2Cpu().getDeckOfCards().append(cardFactory.create())
         }
-        setFactory(new CuerpoCuerpoFactory())
+        setFactory(new AsedioFactory())
         for (i <- 1 to 5) {
             context.getJugador1().getDeckOfCards().append(cardFactory.create())
             context.getJugador2Cpu().getDeckOfCards().append(cardFactory.create())
         }
+        /**
+         * revolvemos los mazos 
+         */
+        context.getJugador1().setDeckOfCards(Random.shuffle(context.getJugador1().getDeckOfCards()))
+        context.getJugador2Cpu().setDeckOfCards(context.getJugador2Cpu().getDeckOfCards())
         
-        //TODO HACER QUE LOS ARREGLOS DE CARTAS DEL MAZO PUEDAN REVUELTAS UNAS VEZ QUE SE SETTEAN  
+        context.setState(new PlayerInit(context))
         
-
     }
 }

@@ -22,19 +22,10 @@ import cl.uchile.dcc.gwent.controller.states.{GameInitialization, State}
  * Tendremos un estado inicial incial para poder settear to do lo necesario
  * El primer turno de cada jugador tambien será especial ya que solo por ser este turno
  * el jugador podrá sacar 10 cartas , el resto de turno es especial
- *
- *
- * TODO (playPlayerInit,playPlayerCputInit ) , (playPlayer,playPlayerCpu) , a parte de esto
- * TODO (Metodos)durante estos estados se podrán realizar las acciones necesarias para poder jugar
- * como playCard passTurn , y playCard debe funcionar difenrete dependiendo si el jugador pasó o no
- * de turno. Cantidad maxima de cartas en mano = 10.
+
  */
 class GameController(){
    private var gameState :State = new GameInitialization(this)
-
-   private var contadorListos: Int =0
-
-   private var CartasSacadas: Int = 0
 
    /**
     * variables necesarias para inicializar correctamente a los jugadores.
@@ -54,48 +45,44 @@ class GameController(){
    private var jugador1: UserPlayer =  new UserPlayer("juanito",2,deckOfCardsPlayer,handPlayer,tableroPlayer)
    private var jugador2Cpu: CpuPlayer =  new CpuPlayer("juancho",2,deckOfCardsCPU,handCPU,tableroCpu)
 
-
-
-   def setJugador1(jugador:UserPlayer): Unit = {
-      jugador1 = jugador
-   }
-   def setJugador2Cpu(jugador:CpuPlayer): Unit = {
-      jugador2Cpu = jugador
-   }
-   def setContadorListos(i:Int): Unit = {
-      contadorListos = i
-   }
    def getJugador1(): playerMethods = {
       jugador1 
    }
    def getJugador2Cpu():playerMethods = {
       jugador2Cpu
    }
+   def getState(): State = {
+      gameState
+   }
    //---------------------------------------------------------------------
     def setState(state: State): Unit = {
       this.gameState = state 
       this.gameState.setContext(this)
    }
-
    /**
     * funciones propias que se tendrán que ejecutar para poder manejar el juego
     *
     */
-
    /**
     * gameInit podria ser algo así como lo que se ejecuta cuando re aprieta el boton "play"
     * Las funciones payerInit y playerCpuInit van a ser los primeros turnos de cada jugador
-    *
     */
    def gameInit(): Unit = {
       gameState.init()
    }
-   def playerInit()
-
-
-
-
-
-
-
+   def takeCard(): Unit = {
+      gameState.takeCard()
+   }
+   def playCard(i:Int): Unit = {
+      gameState.playCard(i)
+   }
+   def passTurn(): Unit = {
+      gameState.passTurn()
+   }
+   def finalizarTurno(): Unit = {
+      gameState.finalizarTurno()
+   }
+   def endGame(): Unit = {
+      gameState.endGame()
+   }
 }

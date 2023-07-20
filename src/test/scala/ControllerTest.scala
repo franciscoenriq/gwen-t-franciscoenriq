@@ -1,8 +1,10 @@
 package cl.uchile.dcc
 
 import cl.uchile.dcc.gwent.controller.GameController
+import cl.uchile.dcc.gwent.controller.states.PlayerInit
 import munit.FunSuite
 import munit.Clue.generate
+
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 import scala.util
@@ -20,9 +22,8 @@ class ControllerTest extends FunSuite{
     println(controller.getJugador1().getDeckOfCards())
     println(controller.getJugador2Cpu().getDeckOfCards())
 
+    println(controller.getState())
 
-    // Reordenar los elementos de forma aleatoria
-    val array1 :mutable.ArrayBuffer[Int] =  Random.shuffle(array)
-    println(array1)
+
   }
 }

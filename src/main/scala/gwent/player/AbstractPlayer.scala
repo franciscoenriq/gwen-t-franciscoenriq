@@ -2,8 +2,9 @@ package cl.uchile.dcc
 package gwent.player
 
 import gwent.battlefield.*
-import gwent.cards.*
+import gwent.cards.{Cards, *}
 import gwent.player.playerMethods
+
 import scala.collection.mutable.ArrayBuffer
 import scala.util.Random
 /**
@@ -58,6 +59,10 @@ abstract class AbstractPlayer(private val name: String,private var gemCount: Int
   def getHandOfCards(): ArrayBuffer[Cards] = {
     this.handOfCards
   }
+
+   def setDeckOfCards(deck:ArrayBuffer[Cards]): Unit = {
+     deckOfCards = deck 
+   }
 }
 
 
